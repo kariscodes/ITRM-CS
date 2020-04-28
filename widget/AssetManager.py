@@ -116,9 +116,12 @@ class AssetWindow(QWidget):
         # self._modelTableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)      # Edit 금지
         # self._modelTableWidget.setSelectionBehavior(QAbstractItemView.SelectRows)     # Row 단위로 선택이 표시되게 한다.
         self._modelTableWidget.setSelectionMode(QAbstractItemView.SingleSelection)    # 하나의 Row만 선택하게 함.
-        self._modelTableWidget.setColumnCount(11)
+        self._modelTableWidget.setColumnCount(8)
         modelHeaderLabels = ['모델명', '품목', '세부구분', '프로세서', '타입', '운영체제',
-                             '메모리', '디스크용량', '디스크유형', '모니터크기', '비고']
+                             '모니터크기', '비고']
+        # self._modelTableWidget.setColumnCount(11)
+        # modelHeaderLabels = ['모델명', '품목', '세부구분', '프로세서', '타입', '운영체제',
+        #                      '메모리', '디스크용량', '디스크유형', '모니터크기', '비고']
         self._modelTableWidget.setHorizontalHeaderLabels(modelHeaderLabels)
 
         bodyTopLayout = QVBoxLayout()
@@ -147,9 +150,12 @@ class AssetWindow(QWidget):
         # self._assetTableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)      # Edit 금지
         # self._assetTableWidget.setSelectionBehavior(QAbstractItemView.SelectRows)     # Row 단위로 선택이 표시되게 한다.
         self._assetTableWidget.setSelectionMode(QAbstractItemView.SingleSelection)    # 하나의 Row만 선택하게 함.
-        self._assetTableWidget.setColumnCount(13)
-        assetHeaderLabels = ['일련번호', '자산명', '제조일', '입고일', 'MS Office', 'Hancom Office', '관리부문',
-                             '메모리(+)', '디스크(+)용량', '디스크(+)유형', '회계관리번호', '바코드', '비고']
+        self._assetTableWidget.setColumnCount(12)
+        assetHeaderLabels = ['일련번호', '자산명', '관리부문', '제조일', '입고일', '메모리', '디스크',
+                             'MS Office', 'Hancom Office', '회계관리번호', '바코드', '비고']
+        # self._assetTableWidget.setColumnCount(13)
+        # assetHeaderLabels = ['일련번호', '자산명', '제조일', '입고일', 'MS Office', 'Hancom Office', '관리부문',
+        #                      '메모리(+)', '디스크(+)용량', '디스크(+)유형', '회계관리번호', '바코드', '비고']
         self._assetTableWidget.setHorizontalHeaderLabels(assetHeaderLabels)
 
         bodyBottomLayout = QVBoxLayout()
