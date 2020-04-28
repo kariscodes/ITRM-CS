@@ -1,4 +1,6 @@
-from PyQt5.QtWidgets import QHBoxLayout, QLabel, QPushButton
+from PyQt5.QtWidgets import QHBoxLayout, QLabel
+# from PyQt5.QtCore import Qt
+# from PyQt5.QtGui import QKeyEvent, QKeySequence
 
 class TitleLayout(QHBoxLayout):
     def __init__(self, headerTitle):

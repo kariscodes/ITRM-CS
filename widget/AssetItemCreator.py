@@ -3,6 +3,7 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt, QDate
 from PyQt5.QtGui import QIcon, QKeyEvent, QKeySequence
+# from widget import CommonWidget
 
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 import Constants
@@ -69,7 +70,6 @@ class AssetItemCreatorWindow(QDialog):
         inputLayout.addWidget(cmbAssetName, 0, 1)
         inputLayout.addWidget(lblMgrClass, 0, 2)
         inputLayout.addWidget(cmbMgrClass, 0, 3)
-        inputLayout.addWidget(serialNumBox, 0, 4, 6, 1)
         inputLayout.addWidget(lblProdDate, 1, 0)
         inputLayout.addWidget(self._dateProd, 1, 1)
         inputLayout.addWidget(lblReceiptDate, 1, 2)
@@ -88,6 +88,7 @@ class AssetItemCreatorWindow(QDialog):
         inputLayout.addWidget(txtBarcode, 4, 3)
         inputLayout.addWidget(lblAssetNote, 5, 0)
         inputLayout.addWidget(txtAssetNote, 5, 1, 1, 3)
+        inputLayout.addWidget(serialNumBox, 0, 4, 6, 1)
 
         winLayout = QVBoxLayout()
         # winLayout.addWidget(serialNumBox)
