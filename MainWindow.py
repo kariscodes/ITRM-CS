@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QColor, QIcon
 
-from widget import CodeManager, UserManager, AcctManager, InfoManager, AssetManager, FrameSQLReport, AnalysisReport, SystemManager
+from widget import CodeManager, UserManager, AcctManager, InfoManager, AssetManager, SQLReport, AnalysisReport, SystemManager
 
 import Constants
 
@@ -55,15 +55,15 @@ class MainWindow(QMainWindow):
         editMenu.addAction(acctMenu)
 
         hwMenu = QAction(QIcon(Constants.BASE_PATH + '/img/hw.png'), '전산자원등록', self)
-        hwMenu.triggered.connect(self.resourceWindow)
+        hwMenu.triggered.connect(self.assetWindow)
         editMenu.addAction(hwMenu)
 
         swMenu = QAction(QIcon(Constants.BASE_PATH + '/img/sw.png'), '소프트웨어등록', self)
-        # hwMenu.triggered.connect(self.resourceWindow)
+        # hwMenu.triggered.connect(self.softwareWindow)
         editMenu.addAction(swMenu)
 
         barcodeMenu = QAction(QIcon(Constants.BASE_PATH + '/img/barcode.png'), '바코드등록', self)
-        # hwMenu.triggered.connect(self.resourceWindow)
+        # hwMenu.triggered.connect(self.tagAttachmentWindow)
         editMenu.addAction(barcodeMenu)
 
         view1Menu = QAction(QIcon(Constants.BASE_PATH + '/img/report_hw.png'), '전산자원현황', self)
@@ -205,7 +205,7 @@ class MainWindow(QMainWindow):
 
     def sqlReportWindow(self):
         sub = QMdiSubWindow()
-        childWindow = FrameSQLReport.SQLReportWindow(self)
+        childWindow = SQLReport.SQLReportWindow(self)
         sub.setWidget(childWindow)
         self.mdi.addSubWindow(sub)
         sub.show()
@@ -258,7 +258,7 @@ class MainWindow(QMainWindow):
             # self.txtLog.append('자산취득등록 화면 실행' + '-- Current Index: ' + str(idx))
             # self.txtLog.append(str(datetime.now()) + '\t' + '자산취득등록 화면 실행')
 
-    def resourceWindow(self):
+    def assetWindow(self):
         sub = QMdiSubWindow()
         childWindow = AssetManager.AssetWindow(self)
         sub.setWidget(childWindow)
